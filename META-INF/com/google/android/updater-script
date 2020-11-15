@@ -1,0 +1,14 @@
+# modem/bl installation script by corsicanu@forum.xda-developers.com
+assert(is_substring("target_device", getprop("ro.boot.bootloader")) ||
+	abort("This device is not supported - check xda thread for supported devices"););
+ui_print(" ");
+ui_print("Installing target_version modem and bootloader...");
+ui_print("Rebooting...");
+ui_print(" ");
+assert(package_extract_file("sboot.bin", "/dev/block/platform/13540000.dwmmc0/by-name/BOTA0"));
+assert(package_extract_file("cm.bin", "/dev/block/platform/13540000.dwmmc0/by-name/BOTA1"));
+assert(package_extract_file("param.bin", "/dev/block/platform/13540000.dwmmc0/by-name/PARAM"));
+assert(package_extract_file("modem.bin", "/dev/block/platform/13540000.dwmmc0/by-name/RADIO"));
+run_program("/sbin/reboot", "fota_bl");
+ui_print(" ");
+set_progress(1.0);
