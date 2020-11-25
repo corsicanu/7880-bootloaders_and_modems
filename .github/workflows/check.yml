@@ -18,7 +18,7 @@ jobs:
           - model: "SM-A720F"
             region: "XSG"
           - model: "SM-A520W"
-            region: "BMC"
+            region: "GLW"
           - model: "SM-A520K"
             region: "KTC"
           - model: "SM-A520L"
