@@ -2,7 +2,7 @@ name: Check firmware update
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 0 * * *"
   push:
 
 jobs:
@@ -14,11 +14,11 @@ jobs:
       matrix:
         include:
           - model: "SM-A520F"
-            region: "DBT"
+            region: "XXV"
           - model: "SM-A720F"
-            region: "XSG"
+            region: "BNG"
           - model: "SM-A520W"
-            region: "GLW"
+            region: "BMC"
           - model: "SM-A520K"
             region: "KTC"
           - model: "SM-A520L"
